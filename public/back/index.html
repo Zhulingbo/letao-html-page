@@ -10,30 +10,57 @@
 </head>
 <body>
 
-<div class="container index">
-    <div class="row">
-        <div class="le_aside">
-            <h2>黑鸭17期</h2>
-            <div class="head">
-                <div class="pic">
-                    <img src="images/7.jpg" alt="">
-                </div>
-                <span class="name">朱凌波</span>
-            </div>
-            <ul>
-                <li>
-                    <a href="javascript:;">
-                        用户管理
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;"></a>
-                </li>
-                <li></li>
-            </ul>
+<div class="container letao">
+    <div class="le_aside">
+    <h2>黑鸭17期</h2>
+    <div class="head">
+        <div class="pic">
+            <img src="images/7.jpg" alt="">
+        </div>
+        <span class="name">朱凌波</span>
+    </div>
+    <ul class="aside_menu">
+        <li>
+            <a href="javascript:;">
+                <i class="glyphicon glyphicon-user"></i>
+                用户管理
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;" class="active">
+                <i class="glyphicon glyphicon-list"></i>
+                分类管理
+            </a>
+            <a href="javascript:;" class="first">一级分类</a>
+            <a href="javascript:;" class="second">二级分类</a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <i class="glyphicon glyphicon-tags"></i>
+                商品管理
+            </a>
+        </li>
+    </ul>
+</div>
+    <div class="le_content">
+        <header>
+            <a href="javascript:;" class="menu_icon pull-left">
+                <i class="glyphicon glyphicon-align-justify"></i>
+            </a>
+            <a href="javascript:;" class="logout pull-right">
+                <i class="glyphicon glyphicon-log-out"></i>
+            </a>
+        </header>
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Library</a></li>
+            <li class="active">Data</li>
+        </ol>
+        <div class="lechear_main">
+            <div id="main1" class="le_chart_1 pull-left"></div>
+            <div id="main2" class="le_chart_2 pull-right"></div>
         </div>
     </div>
-
 </div>
 
 <script src="lib/jquery/jquery.js"></script>
