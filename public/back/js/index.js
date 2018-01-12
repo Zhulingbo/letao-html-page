@@ -48,7 +48,7 @@ $(function () {
   option2 = {
     title : {
       text: '乐淘网销售数据',
-      subtext: '你懂的',
+      subtext: '2017上半年度销量',
       x:'center'
     },
     tooltip : {
@@ -58,20 +58,22 @@ $(function () {
     legend: {
       orient: 'vertical',
       left: 'left',
-      data: ['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+      data: ['耐克','阿迪','迪卡侬','匡威','回力','安德玛','李宁']
     },
     series : [
       {
-        name: '访问来源',
+        name: '销量数据',
         type: 'pie',
         radius : '55%',
         center: ['50%', '60%'],
         data:[
-          {value:335, name:'直接访问'},
-          {value:310, name:'邮件营销'},
-          {value:234, name:'联盟广告'},
-          {value:135, name:'视频广告'},
-          {value:1548, name:'搜索引擎'}
+          {value:1000, name:'耐克'},
+          {value:900, name:'阿迪'},
+          {value:700, name:'迪卡侬'},
+          {value:20, name:'匡威'},
+          {value:40, name:'回力'},
+          {value:1200, name:'安德玛'},
+          {value:50, name:'李宁'}
         ],
         itemStyle: {
           emphasis: {
@@ -85,9 +87,5 @@ $(function () {
   };
   myChart2.setOption(option2);
 
-  //菜单按钮点击事件绑定
-  $(".menu_icon").on('click',function () {
-    $(".le_aside").toggleClass('move');
-    $(".letao").toggleClass('move');
-  })
+
 })
