@@ -4,10 +4,13 @@
   padding-left: 180px;
   padding-right: 0;
   overflow: hidden;
-  transition: all 0.5s ease-in-out;
+  transition: all .5s;
 }
 .letao.move {
   padding-left: 0px;
+}
+.login_bg {
+  background-color: #263238;
 }
 .le_aside {
   width: 180px;
@@ -18,7 +21,7 @@
   z-index: 10;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
   background-color: #263238;
-  transition: all 0.5s ease-in-out;
+  transition: all .5s;
   transform: translateX(0);
 }
 .le_aside h2 {

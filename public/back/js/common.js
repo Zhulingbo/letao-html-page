@@ -5,8 +5,9 @@ $(".menu_icon").on('click',function () {
 })
 
 // 侧边栏导航
-$(".aside_menu li").on('click',function (e) {
-  console.log($(this));
-  $(this).children('a').addClass('active');
-  $(this).children('div').slideToggle();
+$(".aside-btn").on('click',function (e) {
+  $('.active_show').slideToggle();
+})
+$(".active_show a").on('click',function () {
+  $(this).addClass('active').siblings().removeClass('active');
 })
