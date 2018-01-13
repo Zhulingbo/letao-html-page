@@ -111,6 +111,12 @@
   width: 45%;
   height: 500px;
 }
+.le_content .content {
+  padding: 20px;
+}
+.le_content .content .level-1-table {
+  margin-top: 20px;
+}
 @keyframes rotate {
   from {
     transform: rotate(0deg);

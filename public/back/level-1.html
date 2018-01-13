@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>乐淘管理系统-商品管理</title>
+  <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.css">
+  <link rel="stylesheet" href="lib/nprogress/nprogress.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!--模态框-->
+<div class="modal fade add-cate">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">添加分类</h4>
+            </div>
+            <div class="modal-body">
+                <form id="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="categoryName" placeholder="请输入一级分类的名称">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="submit" form="form" class="btn btn-primary">添加</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--模态框-->
+<div class="container letao">
+    <div class="le_aside">
+        <h2>黑鸭17期</h2>
+        <div class="head">
+            <div class="pic">
+                <img src="images/7.jpg" alt="">
+            </div>
+            <span class="name">超级管理员</span>
+        </div>
+        <ul class="aside_menu">
+            <li>
+                <a href="cate_user.html">
+                    <i class="glyphicon glyphicon-user"></i>
+                    用户管理
+                </a>
+            </li>
+            <li>
+                <a href="index.html" class="aside-btn">
+                    <i class="glyphicon glyphicon-list"></i>
+                    分类管理
+                </a>
+                <div>
+                    <a href="javascript:;" class="first active">一级分类</a>
+                    <a href="level-2.html" class="second">二级分类</a>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <i class="glyphicon glyphicon-tags"></i>
+                    商品管理
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="le_content">
+        <!--头部-->
+        <header>
+            <a href="javascript:;" class="menu_icon pull-left">
+                <i class="glyphicon glyphicon-align-justify"></i>
+            </a>
+            <a href="javascript:;" class="logout pull-right">
+                <i class="glyphicon glyphicon-log-out"></i>
+            </a>
+        </header>
+        <div class="content">
+            <ol class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Library</a></li>
+                <li class="active">Data</li>
+            </ol>
+            <!--表格部分-->
+            <button class="btn btn-default btn-addcate" type="button">添加分类</button>
+            <table class="table table-condensed table-striped table-bordered level-1-table">
+                <thead class="text-center">
+                <tr>
+                    <td width="20%">序号</td>
+                    <td width="80%">分类名称</td>
+                </tr>
+                </thead>
+                <tbody class="text-center" id="first-render">
+                <!--<tr>-->
+                    <!--<td>111</td>-->
+                    <!--<td>222</td>-->
+                <!--</tr>-->
+                </tbody>
+            </table>
+
+            <!--分页器-->
+            <div class="text-right">
+                <ul id="paginator"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/html" id="table-tmp">
+{{ each rows v i }}
+<tr>
+    <td>{{i+1}}</td>
+    <td>{{v.categoryName}}</td>
+</tr>
+{{ /each }}
+</script>
+<script src="lib/jquery/jquery.js"></script>
+<script src="lib/bootstrap/js/bootstrap.js"></script>
+<script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+<script src="lib/nprogress/nprogress.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/level1.js"></script>
+</body>
+</html>
