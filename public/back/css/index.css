@@ -114,8 +114,11 @@
 .le_content .content {
   padding: 20px;
 }
-.le_content .content .level-1-table {
+.le_content .content .level-table {
   margin-top: 20px;
+}
+.table > tbody > tr > td {
+  vertical-align: middle;
 }
 @keyframes rotate {
   from {

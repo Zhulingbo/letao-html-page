@@ -83,6 +83,20 @@
                 <li class="active">Data</li>
             </ol>
             <!--表格部分-->
+            <button class="btn btn-default btn-addcate" type="button">添加分类</button>
+            <table class="table table-condensed table-striped table-bordered level-table">
+                <thead class="text-center">
+                <tr>
+                    <td width="10%">序号</td>
+                    <td width="30%">一级分类名称</td>
+                    <td width="30%">二级分类名称</td>
+                    <td width="30%">二级分类LOGO</td>
+                </tr>
+                </thead>
+                <tbody class="text-center" id="first-render">
+
+                </tbody>
+            </table>
 
             <!--分页器-->
             <div class="text-right">
@@ -91,6 +105,16 @@
         </div>
     </div>
 </div>
+<script type="text/html" id="second_tab">
+{{ each rows v i }}
+<tr>
+    <td>{{(page-1)*size+i+1}}</td>
+    <td>{{v.categoryName}}</td>
+    <td>{{v.brandName}}</td>
+    <td><img src="{{v.brandLogo}}" width="50" height="50" alt=""></td>
+</tr>
+{{ /each }}
+</script>
 <script src="lib/jquery/jquery.js"></script>
 <script src="lib/bootstrap/js/bootstrap.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
