@@ -33,7 +33,6 @@ $(function () {
       success:function (info) {
         console.log(info);
         $('#add-sec-cate').html(template('down-tmp',info));
-
         $(".dropdown-menu li a").off().on('click',function () {
           $('.btn-choose .text').text($(this).text());
           $("#cate_name").val($(this).text());
