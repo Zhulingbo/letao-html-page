@@ -48,12 +48,15 @@
                         <input type="text" class="form-control" name="oldPrice" placeholder="请输入商品的原价">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="pirce" placeholder="请输入商品的价格">
+                        <input type="text" class="form-control" name="price" placeholder="请输入商品的价格">
                     </div>
                     <div class="form-group">
                         <!--<input type="text" class="form-control" name="pirce" placeholder="请输入商品的价格">-->
-                        <label for="updatePic" class="btn btn-default">上传图片</label>
-                        <input type="file" id="updatePic" style="display: none">
+                        <label for="fileupload" class="btn btn-default">上传图片</label>
+                        <input type="file" style="display: none" id="fileupload" name="pic1" data-url="/product/addProductPic" multiple>
+                    </div>
+                    <div class="form-group pic-box">
+                        <input type="hidden" name="brandLogo">
                     </div>
                 </form>
             </div>

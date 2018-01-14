@@ -41,4 +41,82 @@ $(function () {
     })
   })
 
+  //表单校验
+  $('#form').bootstrapValidator({
+    excluded:[],
+    feedbackIcons: {
+      valid: 'glyphicon glyphicon-ok',
+      invalid: 'glyphicon glyphicon-remove',
+      validating: 'glyphicon glyphicon-refresh'
+    },
+    fields:{
+      cate_name:{
+        validators:{
+          notEmpty:{
+            message:'请选择二级分类'
+          }
+        }
+      },
+      proName:{
+        validators:{
+          notEmpty:{
+            message:'商品不能为空'
+          }
+        }
+      },
+      proDesc:{
+        validators:{
+          notEmpty:{
+            message:'商品描述不能为空'
+          }
+        }
+      },
+      //^[1-9]\d*$
+      num:{
+        validators:{
+          notEmpty:{
+            message:'商品库存不能为空'
+          },
+          //正则校验
+          regexp:{
+            regexp:/^[1-9]\\d*$/,
+            message:'请输入正确的数字'
+          }
+        }
+      },
+      size:{
+        validators:{
+          notEmpty:{
+            message:'商品尺寸不能为空'
+          },
+          regexp:{
+            regexp:/^\d{2}-\d{2}$/,
+            message:'请输入正确的尺寸信息'
+          }
+        }
+      },
+      oldPrice:{
+        validators:{
+          notEmpty:{
+            message:'价格信息不能为空'
+          }
+        }
+      },
+      price:{
+        validators:{
+          notEmpty:{
+            message:'价格信息不能为空'
+          }
+        }
+      },
+      brandLogo:{
+        validators:{
+          notEmpty:{
+            message:'请上传3张图片'
+          }
+        }
+      }
+    }
+  })
+
 })
