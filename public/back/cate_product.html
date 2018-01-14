@@ -9,7 +9,61 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+<!--模态框-->
+<div class="modal fade add-cate">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">添加商品</h4>
+            </div>
+            <div class="modal-body">
+                <form id="form">
+                    <div class="form-group">
+                        <!-- Single button -->
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default dropdown-toggle btn-choose" data-toggle="dropdown">
+                                <span class="text">请选择二级分类</span>
+                                <span class="caret"></span>
+                            </button>
+                            <input type="hidden" name="cate_name" id="cate_name">
+                            <ul class="dropdown-menu" role="menu" id="add-sec-cate">
+                                <!--挖坑埋人-->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="proName" placeholder="请输入商品名称">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" name="proDesc" rows="3" style="resize: none" placeholder="请输入商品描述"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="num" placeholder="请输入商品的库存">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="size" placeholder="请输入商品的尺寸(32-46)">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="oldPrice" placeholder="请输入商品的原价">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="pirce" placeholder="请输入商品的价格">
+                    </div>
+                    <div class="form-group">
+                        <!--<input type="text" class="form-control" name="pirce" placeholder="请输入商品的价格">-->
+                        <label for="updatePic" class="btn btn-default">上传图片</label>
+                        <input type="file" id="updatePic" style="display: none">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="submit" form="form" class="btn btn-primary">添加</button>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container letao">
     <div class="le_aside">
         <h2>黑鸭17期</h2>
@@ -53,19 +107,69 @@
                 <i class="glyphicon glyphicon-log-out"></i>
             </a>
         </header>
-        <ol class="breadcrumb">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Library</a></li>
-            <li class="active">Data</li>
-        </ol>
+        <div class="content">
+            <ol class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Library</a></li>
+                <li class="active">Data</li>
+            </ol>
+            <!--表格部分-->
+            <button class="btn btn-default btn-addcate" type="button">添加商品</button>
+            <table class="table table-condensed table-striped table-bordered level-table">
+                <thead class="text-center">
+                <tr>
+                    <td width="10%">序号</td>
+                    <td width="25%">商品名称</td>
+                    <td width="25%">商品描述</td>
+                    <td width="10%">商品库存</td>
+                    <td width="10%">商品尺寸</td>
+                    <td width="10%">商品状态</td>
+                    <td width="10%">操作</td>
+                </tr>
+                </thead>
+                <tbody class="text-center" id="first-render">
+                    <!--自动生成内容-->
+                </tbody>
+            </table>
+
+            <!--分页器-->
+            <div class="text-right">
+                <ul id="paginator"></ul>
+            </div>
+        </div>
     </div>
 </div>
-
+<script type="text/html" id="pro-tmp">
+{{ each rows v i}}
+    <tr>
+        <td>{{(page-1)*size+i+1}}</td>
+        <td>{{v.proName}}</td>
+        <td>{{v.proDesc}}</td>
+        <td>{{v.num}}</td>
+        <td>{{v.size}}</td>
+        <td>{{v.statu == 1? '禁用':'开启'}}</td>
+        <td>
+            {{ if v.statu == 1}}
+            <button class="btn btn-sm btn-success">开启</button>
+            {{else if v.statu == 0}}
+            <button class="btn btn-sm btn-danger">禁用</button>
+            {{/if}}
+        </td>
+    </tr>
+{{ /each}}
+</script>
+<script type="text/html" id="down-tmp">
+    {{each rows v i}}
+    <li><a href="javascript:;">{{v.categoryName}}</a></li>
+    {{/each}}
+</script>
 <script src="lib/jquery/jquery.js"></script>
 <script src="lib/bootstrap/js/bootstrap.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
 <script src="lib/nprogress/nprogress.js"></script>
 <script src="lib/echarts/echarts.min.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
 <script src="js/common.js"></script>
+<script src="js/product.js"></script>
 </body>
 </html>
